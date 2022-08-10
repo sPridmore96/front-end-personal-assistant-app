@@ -1,0 +1,36 @@
+.weather-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "icon icon area area area"
+    "icon icon country country country"
+    "icon icon date date date"
+    "region region region region region"
+    "temp temp temp temp temp";
+  padding: 0.5rem;
+  border: solid 2px red;
+  border-radius: 20px;
+
+
+  &__icon {
+    grid-area: icon;
+    border-radius: 20px;
+  }
+  &__area {
+    grid-area: area;
+  }
+  &__country{
+    grid-area: country;
+  }
+  &__time {
+    grid-area: date;
+  }
+  &__region {
+    grid-area: region;
+  }
+  &__temp {
+    grid-area: temp;
+    justify-content: flex-start;
+  }
+}
