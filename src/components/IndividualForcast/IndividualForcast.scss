@@ -1,20 +1,35 @@
+@use "../../assets/Sass/variables" as *;
+
 .weather-card {
+  margin: 1.5rem auto;
   display: grid;
+  height: 15rem;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-template-areas:
-    "icon icon area area area"
-    "icon icon country country country"
-    "icon icon date date date"
-    "region region region region region"
+    "icon-container icon-container area area area"
+    "icon-container icon-container country country country"
+    "icon-container icon-container date date date"
+    "description description description description description"
     "temp temp temp temp temp";
-  padding: 0.5rem;
-  border: solid 2px red;
-  border-radius: 20px;
+  padding: 1rem;
+  color: $color-white;
+  font-family: $font-paragraphs;
+  background-color: $color-light-grey;
+  border: solid $color-white;
+  border-radius: 1.1rem;
+  gap: 1rem;
 
-
+  &__icon-container{
+    background-color: $color-light-grey;
+    width: 70%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    grid-area: icon-container;
+  }
   &__icon {
-    grid-area: icon;
     border-radius: 20px;
   }
   &__area {
@@ -23,11 +38,9 @@
   &__country{
     grid-area: country;
   }
-  &__time {
-    grid-area: date;
-  }
-  &__region {
-    grid-area: region;
+
+  &__description {
+    grid-area: description;
   }
   &__temp {
     grid-area: temp;

@@ -1,0 +1,25 @@
+@use "../../assets/Sass/variables" as *;
+
+
+.home{
+    height: 100%;
+    color: $color-white;
+    
+    &__title{
+        font-size: 2.5rem;
+        font-family: $font-header;
+        text-align: center;
+        margin: 2rem auto;
+        text-decoration: dashed 1px;
+    }
+    &__date{
+        text-align: center;
+        font-size: 2rem;
+        font-family: $font-cursive;
+    }
+   
+    &__forcast-container{
+        width: 80%;
+        margin: 1rem auto;
+    }
+}

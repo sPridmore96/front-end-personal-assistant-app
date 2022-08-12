@@ -1,6 +1,11 @@
 @use "./assets/Sass/reset.scss" as *;
+@use "./assets/Sass/variables" as *;
 
 .App {
-width: 95%
-margin auto;
+width: 99%;
+height: 100%;
+padding: 0.5rem;
+margin: auto;
+background: $color-dark-blue;
+background: linear-gradient(50deg, $color-dark-blue 69%, $color-light-blue 100%);
 }
