@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Home/Home";
+import IndividualMoreInfo from "./IndividualMoreInfo/IndividualMoreInfo";
+import weatherBigCities from "../assets/Data/Data";
 
 const Routing = () => {
   const citysForCurrentWeather = ["London", "Dubai", "Singapore", "New+York"];
@@ -30,53 +32,66 @@ const Routing = () => {
     });
   };
   findUser();
-console.log();
   useEffect(() => {
-    getBigCityWeather()
-    getUserWeatherInfo();
+    // getBigCityWeather()
+    // getUserWeatherInfo();
     getCurrentDate();
   }, [longitude]);
 
-  const getUserWeatherInfo = async () => {
-    const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIKey}&units=metric`
+  // const getUserWeatherInfo = async () => {
+  //   const res = await fetch(
+  //     `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIKey}&units=metric`
+  //   );
+  //   const data = await res.json();
+  //   setCurrentWeatherInfo(data);
+  // };
+  // const getBigCityWeather = async () => {
+  //   citysForCurrentWeather.forEach(async (city) => {
+  //     const res = await fetch(
+  //       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=metric`
+  //     );
+  //     const data = await res.json();
+  //     const copyBigCityData = bigCityData;
+  //     console.log(copyBigCityData);
+  //     copyBigCityData.push(data);
+  //     console.log(copyBigCityData);
+  //     setBigCityData(copyBigCityData);
+  //   });
+  //   console.log(bigCityData);
+  // };
+
+  const getIcon = async (iconToFind, stateToSet) => {
+    let response = await fetch(
+      `http://openweathermap.org/img/wn/${iconToFind}@2x.png`
     );
-    const data = await res.json();
-    setCurrentWeatherInfo(data);
-  };
-  const getBigCityWeather = async () => {
-    citysForCurrentWeather.forEach(async (city) => {
-      const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=metric`
-      );
-      const data = await res.json();
-      const copyBigCityData = bigCityData;
-      console.log(copyBigCityData);
-      copyBigCityData.push(data);
-      console.log(copyBigCityData);
-      setBigCityData(copyBigCityData);
-    });
-    console.log(bigCityData);
+    let data = await response.blob();
+    const urlCreator = window.URL || window.webkitURL;
+    const iconURL = urlCreator.createObjectURL(data);
+    stateToSet(iconURL);
   };
 
   return (
     <Router>
       <Routes>
-        {currentWeatherInfo && (
+        {currentWeatherInfo || weatherBigCities && (
           <Route
             path="/"
             element={
               <Home
-                bigCityData={bigCityData}
+                // bigCityData={bigCityData}
+                weatherBigCities={weatherBigCities}
                 date={date}
-                currentWeatherInfo={currentWeatherInfo}
+                getIcon={getIcon}
+                // currentWeatherInfo={currentWeatherInfo}
               />
             }
           />
         )}
+        <Route path="/:moreWeatherInfoId" element={<IndividualMoreInfo getIcon={getIcon} weatherInfo={weatherBigCities}/>}></Route>
       </Routes>
     </Router>
   );
 };
+
 
 export default Routing;

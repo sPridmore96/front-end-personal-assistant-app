@@ -1,0 +1,74 @@
+@use "../../assets/Sass/variables" as *;
+
+.more-info{
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    height: 96vh;
+    font-family: $font-paragraphs;
+
+
+    &__welcome {
+        margin: 0.5rem;
+    }
+
+    &__title{
+    text-decoration: underline;
+    }
+    &__sub-header{
+
+    font-family: $font-paragraphs;
+    }
+    &__back-button{
+        display: flex;
+        text-decoration: none;
+        width: 4.4rem;
+        height: 4rem;
+        border-radius: 20px;
+        background-color: $color-light-blue;
+        color: $color-white;
+        font-family: $font-paragraphs;
+        font-size: 1.5rem;
+        font-weight: 800;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__img{
+        margin: 2.5rem auto;
+        width: fit-content;
+        border-radius: 50px;
+        background-color: $color-light-grey;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        align-items: center;
+        justify-content: center;
+        }
+
+    &__overview{
+        width: 100%;
+        flex-wrap: wrap;
+        margin: 3rem auto;
+        padding: 1rem;
+        background-color: $color-light-grey;
+        text-align: center;
+        border-radius: 10px;
+        font-family: $font-paragraphs;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    &__temps{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 10px;
+        padding: 0.5rem;
+        width: 85%;
+        margin: 0.5rem auto;
+        background-color: $color-light-grey;
+        font-family: $font-paragraphs;
+
+    }
+}

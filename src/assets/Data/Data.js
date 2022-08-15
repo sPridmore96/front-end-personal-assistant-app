@@ -1,209 +1,220 @@
-const weatherBigCitys = [
-    {
-        "request": {
-          "type": "LatLon",
-          "query": "Lat 40.78 and Lon -73.97",
-          "language": "en",
-          "unit": "m"
-        },
-        "location": {
-          "name": "Guttenberg",
-          "country": "United States of America",
-          "region": "New Jersey",
-          "lat": "40.792",
-          "lon": "-74.004",
-          "timezone_id": "America/New_York",
-          "localtime": "2022-08-11 08:03",
-          "localtime_epoch": 1660204980,
-          "utc_offset": "-4.0"
-        },
-        "current": {
-          "observation_time": "12:03 PM",
-          "temperature": 22,
-          "weather_code": 296,
-          "weather_icons": [
-            "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0017_cloudy_with_light_rain.png"
-          ],
-          "weather_descriptions": [
-            "Light Rain"
-          ],
-          "wind_speed": 4,
-          "wind_degree": 10,
-          "wind_dir": "N",
-          "pressure": 1014,
-          "precip": 0.2,
-          "humidity": 68,
-          "cloudcover": 75,
-          "feelslike": 25,
-          "uv_index": 5,
-          "visibility": 16,
-          "is_day": "yes"
-        }
-      },
+const weatherBigCities = [
+  {
+    "coord": {
+      "lon": -1.2714,
+      "lat": 52.8985
+    },
+    "weather": [
       {
-        "request": {
-          "type": "City",
-          "query": "London, United Kingdom",
-          "language": "en",
-          "unit": "m"
-        },
-        "location": {
-          "name": "London",
-          "country": "United Kingdom",
-          "region": "City of London, Greater London",
-          "lat": "51.517",
-          "lon": "-0.106",
-          "timezone_id": "Europe/London",
-          "localtime": "2022-08-11 15:16",
-          "localtime_epoch": 1660230960,
-          "utc_offset": "1.0"
-        },
-        "current": {
-          "observation_time": "02:16 PM",
-          "temperature": 31,
-          "weather_code": 113,
-          "weather_icons": [
-            "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
-          ],
-          "weather_descriptions": [
-            "Sunny"
-          ],
-          "wind_speed": 4,
-          "wind_degree": 102,
-          "wind_dir": "ESE",
-          "pressure": 1020,
-          "precip": 0,
-          "humidity": 27,
-          "cloudcover": 0,
-          "feelslike": 29,
-          "uv_index": 8,
-          "visibility": 10,
-          "is_day": "yes"
-        }
-      },
-      {
-        "request": {
-          "type": "City",
-          "query": "New York, United States of America",
-          "language": "en",
-          "unit": "m"
-        },
-        "location": {
-          "name": "New York",
-          "country": "United States of America",
-          "region": "New York",
-          "lat": "40.714",
-          "lon": "-74.006",
-          "timezone_id": "America/New_York",
-          "localtime": "2022-08-11 10:21",
-          "localtime_epoch": 1660213260,
-          "utc_offset": "-4.0"
-        },
-        "current": {
-          "observation_time": "02:21 PM",
-          "temperature": 24,
-          "weather_code": 116,
-          "weather_icons": [
-            "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"
-          ],
-          "weather_descriptions": [
-            "Partly cloudy"
-          ],
-          "wind_speed": 9,
-          "wind_degree": 70,
-          "wind_dir": "ENE",
-          "pressure": 1013,
-          "precip": 0,
-          "humidity": 88,
-          "cloudcover": 75,
-          "feelslike": 26,
-          "uv_index": 5,
-          "visibility": 11,
-          "is_day": "yes"
-        }
-      },
-      {
-        "request": {
-          "type": "City",
-          "query": "Singapore, Singapore",
-          "language": "en",
-          "unit": "m"
-        },
-        "location": {
-          "name": "Singapore",
-          "country": "Singapore",
-          "region": "",
-          "lat": "1.293",
-          "lon": "103.856",
-          "timezone_id": "Asia/Singapore",
-          "localtime": "2022-08-11 22:21",
-          "localtime_epoch": 1660256460,
-          "utc_offset": "8.0"
-        },
-        "current": {
-          "observation_time": "02:21 PM",
-          "temperature": 29,
-          "weather_code": 116,
-          "weather_icons": [
-            "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png"
-          ],
-          "weather_descriptions": [
-            "Partly cloudy"
-          ],
-          "wind_speed": 15,
-          "wind_degree": 120,
-          "wind_dir": "ESE",
-          "pressure": 1008,
-          "precip": 0,
-          "humidity": 84,
-          "cloudcover": 75,
-          "feelslike": 34,
-          "uv_index": 1,
-          "visibility": 10,
-          "is_day": "no"
-        }
-      },
-      {
-        "request": {
-          "type": "City",
-          "query": "Dubai, United Arab Emirates",
-          "language": "en",
-          "unit": "m"
-        },
-        "location": {
-          "name": "Dubai",
-          "country": "United Arab Emirates",
-          "region": "Dubai",
-          "lat": "25.252",
-          "lon": "55.280",
-          "timezone_id": "Asia/Dubai",
-          "localtime": "2022-08-11 18:22",
-          "localtime_epoch": 1660242120,
-          "utc_offset": "4.0"
-        },
-        "current": {
-          "observation_time": "02:22 PM",
-          "temperature": 41,
-          "weather_code": 113,
-          "weather_icons": [
-            "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
-          ],
-          "weather_descriptions": [
-            "Sunny"
-          ],
-          "wind_speed": 20,
-          "wind_degree": 320,
-          "wind_dir": "NW",
-          "pressure": 992,
-          "precip": 0,
-          "humidity": 38,
-          "cloudcover": 0,
-          "feelslike": 58,
-          "uv_index": 9,
-          "visibility": 10,
-          "is_day": "yes"
-        }
+        "id": 800,
+        "main": "Clear",
+        "description": "clear sky",
+        "icon": "01d"
       }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 24.57,
+      "feels_like": 24.36,
+      "temp_min": 21.35,
+      "temp_max": 27.05,
+      "pressure": 992,
+      "humidity": 49
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 4.63,
+      "deg": 270
+    },
+    "clouds": {
+      "all": 0
+    },
+    "dt": 1660554325,
+    "sys": {
+      "type": 2,
+      "id": 2038495,
+      "country": "GB",
+      "sunrise": 1660538778,
+      "sunset": 1660591989
+    },
+    "timezone": 3600,
+    "id": 2643697,
+    "name": "Long Eaton",
+    "cod": 200
+  },
+  {
+    "coord": {
+      "lon": -74.006,
+      "lat": 40.7143
+    },
+    "weather": [
+      {
+        "id": 803,
+        "main": "Clouds",
+        "description": "broken clouds",
+        "icon": "04n"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 20.33,
+      "feels_like": 20.06,
+      "temp_min": 14.73,
+      "temp_max": 22.75,
+      "pressure": 1016,
+      "humidity": 63
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 2.68,
+      "deg": 360,
+      "gust": 4.02
+    },
+    "clouds": {
+      "all": 75
+    },
+    "dt": 1660553937,
+    "sys": {
+      "type": 2,
+      "id": 2039034,
+      "country": "US",
+      "sunrise": 1660557985,
+      "sunset": 1660607690
+    },
+    "timezone": -14400,
+    "id": 5128581,
+    "name": "New York",
+    "cod": 200
+  },
+  {
+    "coord": {
+      "lon": -0.1257,
+      "lat": 51.5085
+    },
+    "weather": [
+      {
+        "id": 804,
+        "main": "Clouds",
+        "description": "overcast clouds",
+        "icon": "04d"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 24.09,
+      "feels_like": 24.12,
+      "temp_min": 21.95,
+      "temp_max": 26.27,
+      "pressure": 1001,
+      "humidity": 60
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 3.09,
+      "deg": 220
+    },
+    "clouds": {
+      "all": 91
+    },
+    "dt": 1660553547,
+    "sys": {
+      "type": 2,
+      "id": 2075535,
+      "country": "GB",
+      "sunrise": 1660538751,
+      "sunset": 1660591466
+    },
+    "timezone": 3600,
+    "id": 2643743,
+    "name": "London",
+    "cod": 200
+  },
+  {
+    "coord": {
+      "lon": 55.3047,
+      "lat": 25.2582
+    },
+    "weather": [
+      {
+        "id": 802,
+        "main": "Clouds",
+        "description": "scattered clouds",
+        "icon": "03d"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 42,
+      "feels_like": 39.25,
+      "temp_min": 41.16,
+      "temp_max": 42.14,
+      "pressure": 998,
+      "humidity": 11
+    },
+    "visibility": 6000,
+    "wind": {
+      "speed": 3.09,
+      "deg": 260
+    },
+    "clouds": {
+      "all": 45
+    },
+    "dt": 1660553529,
+    "sys": {
+      "type": 1,
+      "id": 7537,
+      "country": "AE",
+      "sunrise": 1660528343,
+      "sunset": 1660575271
+    },
+    "timezone": 14400,
+    "id": 292223,
+    "name": "Dubai",
+    "cod": 200
+  },
+  {
+    "coord": {
+      "lon": 103.8501,
+      "lat": 1.2897
+    },
+    "weather": [
+      {
+        "id": 803,
+        "main": "Clouds",
+        "description": "broken clouds",
+        "icon": "04d"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 30.23,
+      "feels_like": 36.66,
+      "temp_min": 29.92,
+      "temp_max": 33.95,
+      "pressure": 1008,
+      "humidity": 74
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 4.63,
+      "deg": 180
+    },
+    "clouds": {
+      "all": 75
+    },
+    "dt": 1660554113,
+    "sys": {
+      "type": 2,
+      "id": 265581,
+      "country": "SG",
+      "sunrise": 1660518274,
+      "sunset": 1660562041
+    },
+    "timezone": 28800,
+    "id": 1880252,
+    "name": "Singapore",
+    "cod": 200
+  }
 ]
 
-export default weatherBigCitys
+export default weatherBigCities
