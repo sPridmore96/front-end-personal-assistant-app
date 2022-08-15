@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './IndividualMoreInfo.scss';
 
 const IndividualMoreInfo = ({ weatherInfo, getIcon }) => {
-  const [individualInfo, setIndividualInfo] = useState([
+  const [individualInfo, setIndividualInfo] = useState(
     {
       coord: {
         lon: -0.1257,
@@ -48,7 +48,7 @@ const IndividualMoreInfo = ({ weatherInfo, getIcon }) => {
       name: 'London',
       cod: 200,
     },
-  ]);
+  );
   const [sunRise, setSunRise] = useState('');
   const [sunSet, setSunset] = useState('');
   const [iconImg, setIconImg] = useState('');
@@ -61,9 +61,11 @@ const IndividualMoreInfo = ({ weatherInfo, getIcon }) => {
     const foundWeatherInfo = weatherInfo.filter((location) => {
       return location.id.toString().includes(weatherId);
     });
-    setIndividualInfo(foundWeatherInfo);
+    const foundWeatherObj = foundWeatherInfo.shift()
+    console.log(foundWeatherObj);
+    setIndividualInfo(foundWeatherObj);
   };
-
+console.log(individualInfo);
   const convertTime = (
     unixCode,
     timeOfDayStateToSet,
@@ -126,7 +128,7 @@ const IndividualMoreInfo = ({ weatherInfo, getIcon }) => {
   }, [pageLoaded]);
 
   const { coord, weather, main, visibility, sys, name, timezone } =
-    individualInfo[0];
+    individualInfo;
   const { lon, lat } = coord;
   const { description, icon } = weather[0];
   const { temp, feels_like, temp_min, temp_max, humidity } = main;

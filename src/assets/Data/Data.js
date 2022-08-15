@@ -1,49 +1,6 @@
 const weatherBigCities = [
   {
     "coord": {
-      "lon": -1.2714,
-      "lat": 52.8985
-    },
-    "weather": [
-      {
-        "id": 800,
-        "main": "Clear",
-        "description": "clear sky",
-        "icon": "01d"
-      }
-    ],
-    "base": "stations",
-    "main": {
-      "temp": 24.57,
-      "feels_like": 24.36,
-      "temp_min": 21.35,
-      "temp_max": 27.05,
-      "pressure": 992,
-      "humidity": 49
-    },
-    "visibility": 10000,
-    "wind": {
-      "speed": 4.63,
-      "deg": 270
-    },
-    "clouds": {
-      "all": 0
-    },
-    "dt": 1660554325,
-    "sys": {
-      "type": 2,
-      "id": 2038495,
-      "country": "GB",
-      "sunrise": 1660538778,
-      "sunset": 1660591989
-    },
-    "timezone": 3600,
-    "id": 2643697,
-    "name": "Long Eaton",
-    "cod": 200
-  },
-  {
-    "coord": {
       "lon": -74.006,
       "lat": 40.7143
     },

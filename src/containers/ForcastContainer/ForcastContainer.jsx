@@ -6,7 +6,6 @@ const ForcastContainer = ({currentWeatherInfo, bigCityData, weatherBigCities, ge
 
   return (
     <div>
-       {/* <IndividualForcast weatherInfo={currentWeatherInfo} /> */}
        {/* {bigCityData.map((city,index) => <IndividualForcast key={index} weatherInfo={city}/>)} */}
        {weatherBigCities.map((city,index) => <IndividualForcast getIcon={getIcon} key={index} weatherInfo={city}/>)}
     </div>
