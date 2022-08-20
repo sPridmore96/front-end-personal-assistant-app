@@ -1,16 +1,36 @@
-import React, {useState} from "react";
-import "./Home.scss";
-import ForcastContainer from "../ForcastContainer/ForcastContainer";
+import React, { useState } from 'react';
+import './Home.scss';
+import Map from '../../components/Map/Map';
+import WeatherSnippet from '../WeatherSnippet/WeatherSnippet';
+import NavBar from '../../components/NavBar/NavBar';
 
-const Home = ({ weatherBigCities ,currentWeatherInfo, date,bigCityData, getIcon }) => {
-
+const Home = ({
+  longitude,
+  latitude,
+  currentWeatherInfo,
+  getIcon,
+  localForecast,
+}) => {
   return (
     <div className="home">
-        <h1 className="home__title">Current Weather</h1>
-        <p className="home__date">{date}</p>
-      <div className="home__forcast-container">
-        <ForcastContainer getIcon={getIcon} weatherBigCities={weatherBigCities} bigCityData={bigCityData} currentWeatherInfo={currentWeatherInfo} />
+      <h1 className="home__title">Hey Name</h1>
+      <p>Here is some off todays info!</p>
+      <h2 className="home__subheader">You're Commute</h2>
+      <Map
+        currentWeatherInfo={currentWeatherInfo}
+        latitude={latitude}
+        longitude={longitude}
+      />
+      <h2 className="home__subheader">Your local Forecast</h2>
+
+      <div className="home__weather">
+        <WeatherSnippet
+          localForecast={localForecast}
+          getIcon={getIcon}
+          id={localForecast.list.forEach((item) => {})}
+        />
       </div>
+      <NavBar />
     </div>
   );
 };

@@ -1,0 +1,12 @@
+@use "../../assets/Sass/variables" as *;
+
+.weather-snip{
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    overflow-x: scroll;
+    
+    &::-webkit-scrollbar{
+        width: 0;
+    }
+}

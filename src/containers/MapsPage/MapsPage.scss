@@ -1,0 +1,26 @@
+@use "../../assets/Sass/variables" as *;
+
+.maps {
+    color: $color-white;
+    font-family: $font-paragraphs;
+    text-align: center;
+    padding-bottom: 4rem;
+
+    &__icon {
+        margin-top: 1rem;
+        width: 4rem;
+        height: 4rem;
+    }
+
+    &__title {
+        margin-top: 3rem;
+    }
+
+    &__subtitle {
+        margin-top: 0.5rem;
+    }
+
+    &__map {
+        margin-top: 1rem;
+    }
+}

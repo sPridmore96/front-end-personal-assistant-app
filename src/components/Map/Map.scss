@@ -1,0 +1,79 @@
+@use "../../assets/Sass/variables" as *;
+@use "../../assets/Sass/mixins" as *;
+
+
+.map {
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $color-dark-blue;
+    font-weight: 600;
+    margin-top: -4rem;
+    
+    &__controls {
+        position: relative;
+        top: 5.8rem;
+        z-index: 1;
+        background-color: $color-light-grey;
+        padding: 0.6rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 0 0 30px 30px;
+        flex-wrap: wrap;
+    }
+
+    &__controls-top-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        width: 100%;
+        font-size: 0.7rem;
+    }
+    &__destination-input{
+        @include roundButton($color-light-transparent-grey, 5px);
+        padding: 0.2rem 0.2rem 0.2rem 1rem;
+        color: $color-dark-blue;
+        height: 2rem;
+        font-weight: 600;
+        width: 100%;
+    }
+    &__input-container{
+        width: 40%
+    }
+    ::placeholder{
+        color: $color-dark-blue;
+        font-weight: 600
+    }
+    &__calculate-route{
+        @include roundButton($color-dark-blue, 10px);
+        width: 20%;
+        height: 2rem;
+        padding: 0.2rem;
+        color: $color-light-blue;
+        font-weight: 500;
+        margin-left: 0.2rem;
+    }
+    &__clear-route {
+        width: 2rem;
+        height: 2rem;
+        @include roundButton($color-dark-blue, 10px);
+        color: $color-light-blue;
+        font-weight: 600;
+        margin-left: 0.2rem;
+    }
+
+    &__controls-bottom-section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__location-button {
+        width: 2rem;
+        height: 2rem;
+        @include roundButton($color-light-blue)
+    }
+}

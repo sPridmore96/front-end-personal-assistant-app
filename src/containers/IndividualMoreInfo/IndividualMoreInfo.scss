@@ -44,7 +44,7 @@
         margin: 2.5rem auto;
         width: fit-content;
         border-radius: 50px;
-        background-color: $color-light-grey;
+        background-color: $color-light-transparent-grey;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         align-items: center;
         justify-content: center;
@@ -55,8 +55,7 @@
         flex-wrap: wrap;
         margin: 3rem auto;
         padding: 1rem;
-        background-color: $color-light-grey;
-        text-align: center;
+        background-color: $color-light-transparent-grey;
         border-radius: 10px;
         font-family: $font-paragraphs;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -67,7 +66,7 @@
         padding: 0.5rem;
         width: 85%;
         margin: 0.5rem auto;
-        background-color: $color-light-grey;
+        background-color: $color-light-transparent-grey;
         font-family: $font-paragraphs;
 
     }

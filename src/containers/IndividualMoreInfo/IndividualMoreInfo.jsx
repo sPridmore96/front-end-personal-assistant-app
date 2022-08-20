@@ -1,54 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './IndividualMoreInfo.scss';
+import preSetCurrentWeather from '../../assets/Data/PreSetCurrentWeather';
 
 const IndividualMoreInfo = ({ weatherInfo, getIcon }) => {
-  const [individualInfo, setIndividualInfo] = useState(
-    {
-      coord: {
-        lon: -0.1257,
-        lat: 51.5085,
-      },
-      weather: [
-        {
-          id: 804,
-          main: 'Clouds',
-          description: 'overcast clouds',
-          icon: '04d',
-        },
-      ],
-      base: 'stations',
-      main: {
-        temp: 27.1,
-        feels_like: 27.51,
-        temp_min: 24.95,
-        temp_max: 30.08,
-        pressure: 1002,
-        humidity: 50,
-      },
-      visibility: 10000,
-      wind: {
-        speed: 3.6,
-        deg: 220,
-        gust: 9.26,
-      },
-      clouds: {
-        all: 92,
-      },
-      dt: 1660559762,
-      sys: {
-        type: 2,
-        id: 268730,
-        country: 'GB',
-        sunrise: 1660538751,
-        sunset: 1660591466,
-      },
-      timezone: 3600,
-      id: 2643743,
-      name: 'London',
-      cod: 200,
-    },
-  );
+  const [individualInfo, setIndividualInfo] = useState(preSetCurrentWeather);
   const [sunRise, setSunRise] = useState('');
   const [sunSet, setSunset] = useState('');
   const [iconImg, setIconImg] = useState('');
@@ -57,15 +13,14 @@ const IndividualMoreInfo = ({ weatherInfo, getIcon }) => {
   const [eveningTimeZoneNum, setEveningTimeZoneNum] = useState();
 
   const getWeatherId = () => {
-    const weatherId = window.location.pathname.split('').splice(1).join('');
+    const weatherId = window.location.pathname.split('').splice(9).join('');
     const foundWeatherInfo = weatherInfo.filter((location) => {
       return location.id.toString().includes(weatherId);
     });
     const foundWeatherObj = foundWeatherInfo.shift()
-    console.log(foundWeatherObj);
     setIndividualInfo(foundWeatherObj);
   };
-console.log(individualInfo);
+
   const convertTime = (
     unixCode,
     timeOfDayStateToSet,
@@ -138,7 +93,7 @@ console.log(individualInfo);
     <div className="more-info">
       <div className='more-info__welcome'>
         <h2 className="more-info__title">{name}</h2>
-        <Link to={"/"} className="more-info__back-button">Back</Link>
+        <Link to={"/weather"} className="more-info__back-button">Back</Link>
         <p className="more-info__sub-header">
           {country} <br /> Latitude : {lat} <br /> Longitude : {lon}
         </p>

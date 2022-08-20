@@ -1,0 +1,10 @@
+@use "./variables" as *;
+
+@mixin roundButton ($backGround-color: transparent, $border-radius: 50px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    border: none;
+    background-color: $backGround-color ;
+}

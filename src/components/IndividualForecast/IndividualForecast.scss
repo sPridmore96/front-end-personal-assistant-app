@@ -16,13 +16,13 @@
   padding: 1rem;
   color: $color-white;
   font-family: $font-paragraphs;
-  background-color: $color-light-grey;
+  background-color: $color-light-transparent-grey;
   border: solid $color-white;
   border-radius: 1.1rem;
   gap: 1rem;
 
   &__icon-container{
-    background-color: $color-light-grey;
+    background-color: $color-light-transparent-grey;
     width: 70%;
     height: 60%;
     display: flex;
