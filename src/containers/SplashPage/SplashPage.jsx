@@ -33,6 +33,7 @@ const SplashPage = () => {
       <Link className="splash__button" to="/home">
         Continue
       </Link>
+      
     </div>
   );
 };
