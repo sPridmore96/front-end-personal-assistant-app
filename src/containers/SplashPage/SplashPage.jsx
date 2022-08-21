@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import "./SplashPage.scss";
 import { Link } from "react-router-dom";
 import { SiHomeassistant } from "react-icons/si";
@@ -10,6 +10,9 @@ import {
 
 const SplashPage = ({ setUserName, setUserWorkPlace }) => {
   const mapsKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+  const userNameRef = useRef()
+  const workPlaceRef = useRef()
+
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: mapsKey,
@@ -17,6 +20,11 @@ const SplashPage = ({ setUserName, setUserWorkPlace }) => {
   });
   if (!isLoaded) {
     return <div>Loading</div>;
+  }
+
+  const handleStateSet = () => {
+    setUserName(userNameRef.current.value)
+    setUserWorkPlace(workPlaceRef.current.value)
   }
 
   return (
@@ -32,7 +40,8 @@ const SplashPage = ({ setUserName, setUserWorkPlace }) => {
             placeholder="Joe blog's"
             className="splash__input"
             type="text"
-            onChange={(event) => setUserName(event.target.value)}
+            // onChange={(event) => setUserName(event.target.value)}
+            ref={userNameRef}
           />
         </div>
         <div className="splash__work">
@@ -44,12 +53,13 @@ const SplashPage = ({ setUserName, setUserWorkPlace }) => {
               placeholder="Nottingham"
               className="splash__input"
               type="text"
-              onChange={(event) => setUserWorkPlace(event.target.value)}
+              // onChange={(event) => setUserWorkPlace(event.target.value)}
+              ref={workPlaceRef}
             />
           </Autocomplete>
         </div>
       </div>
-      <Link className="splash__button" to="/home">
+      <Link onClick={handleStateSet} className="splash__button" to="/home">
         Continue
       </Link>
     </form>
