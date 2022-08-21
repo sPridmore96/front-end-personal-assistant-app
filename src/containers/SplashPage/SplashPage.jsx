@@ -22,9 +22,16 @@ const SplashPage = ({ setUserName, setUserWorkPlace }) => {
     return <div>Loading</div>;
   }
 
-  const handleStateSet = () => {
-    setUserName(userNameRef.current.value)
-    setUserWorkPlace(workPlaceRef.current.value)
+  const handleStateSet = (event) => {
+    const userName = userNameRef.current.value
+    const workPlaceLocation = workPlaceRef.current.value
+    if(userName === "" || workPlaceLocation === ""){
+      event.preventDefault()
+      alert("Both inputs are required to continue")
+    } else {
+      setUserName(userName)
+      setUserWorkPlace(workPlaceLocation)
+    }
   }
 
   return (
@@ -46,7 +53,7 @@ const SplashPage = ({ setUserName, setUserWorkPlace }) => {
         </div>
         <div className="splash__work">
           <label className="splash__label" htmlFor="">
-            Enter your works postcode
+            Enter your works location or post code
           </label>
           <Autocomplete>
             <input
