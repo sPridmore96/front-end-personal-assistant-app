@@ -13,6 +13,8 @@ import SplashPage from './SplashPage/SplashPage';
 const Routing = () => {
   const citysForCurrentWeather = ['London', 'Dubai', 'Singapore', 'New+York'];
 
+  const [userName, setUserName] = useState('')
+  const [userWorkPlace, setUserWorkPlace] = useState()
   const [bigCityData, setBigCityData] = useState([]);
   const [latitude, setLatitude] = useState('40.792');
   const [longitude, setLongitude] = useState('74.004');
@@ -86,11 +88,11 @@ const Routing = () => {
     const iconURL = urlCreator.createObjectURL(data);
     stateToSet(iconURL);
   };
-
+  console.log(userWorkPlace);
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<SplashPage />} />
+        <Route path="/" element={<SplashPage setUserName={setUserName} setUserWorkPlace={setUserWorkPlace} />} />
         {currentWeatherInfo && (
           <Route
             path="/home"
@@ -104,6 +106,8 @@ const Routing = () => {
                 longitude={longitude}
                 latitude={latitude}
                 localForecast={localForecast}
+                userName={userName}
+                userWorkPlace={userWorkPlace}
               />
             }
           />
