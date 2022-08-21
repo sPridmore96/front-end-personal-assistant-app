@@ -1,0 +1,39 @@
+@use "../../assets/Sass/variables" as *;
+@use "../../assets/Sass/mixins" as *;
+
+
+.static-map {
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $color-dark-blue;
+  font-weight: 600;
+
+  &__controls {
+    position: relative;
+    top: 3.2rem;
+    z-index: 1;
+    background-color: $color-light-grey;
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 4.5rem;
+    width: 100%;
+    border-radius: 0 0 30px 30px;
+    flex-wrap: wrap;
+  }
+
+  &__controls-bottom-section {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__location-button {
+    width: 2rem;
+    height: 2rem;
+    @include roundButton($color-light-blue);
+  }
+}
