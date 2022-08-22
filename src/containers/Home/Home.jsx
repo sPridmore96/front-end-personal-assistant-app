@@ -13,11 +13,13 @@ const Home = ({
   localForecast,
   userName,
   userWorkPlace,
+  date
 }) => {
   return (
     <div className="home">
       <h1 className="home__title">Hey {userName}</h1>
       <p>Here is some off todays info!</p>
+      <p className="home__date">{date}</p>
       <h2 className="home__subheader">You're Commute</h2>
       <div className="home__map">
         <StaticMap

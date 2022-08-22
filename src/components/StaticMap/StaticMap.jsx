@@ -31,6 +31,7 @@ const StaticMap = ({ latitude, longitude, currentWeatherInfo, userWorkPlace }) =
     return <div>Loading</div>;
   }
 
+
   const calculateRoute = async () => {
 
     // eslint-disable-next-line no-undef
@@ -71,8 +72,8 @@ const StaticMap = ({ latitude, longitude, currentWeatherInfo, userWorkPlace }) =
         options={{
             streetViewControl: false,
             fullscreenControl: false,
-            gestureHandling: "greedy"
-            
+            gestureHandling: "greedy",
+            mapTypeControl: false
         }}
         on
         onLoad={(map) => setMap(map)}

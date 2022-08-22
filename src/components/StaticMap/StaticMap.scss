@@ -10,8 +10,10 @@
   align-items: center;
   color: $color-dark-blue;
   font-weight: 600;
+  
 
   &__controls {
+
     position: relative;
     top: 3.2rem;
     z-index: 1;
@@ -19,16 +21,18 @@
     padding: 0.6rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 4.5rem;
+    height: 4rem;
+    text-align: center;
     width: 100%;
     border-radius: 0 0 30px 30px;
     flex-wrap: wrap;
   }
 
   &__controls-bottom-section {
+    
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__location-button {

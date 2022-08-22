@@ -34,6 +34,10 @@ const Weather = ({
       weatherSearchRef.current.value = ""
     }
   };
+
+  const clearSearch = () => {
+    weatherSearchRef.current.value = ""
+  }
   useEffect(() => {
     handleWeatherSearch()
   }, [newWeatherInfo]);
@@ -52,6 +56,7 @@ const Weather = ({
       <p className="weather__date">{date}</p>
       <div className="weather__forecast-container">
         <label htmlFor="">Search for a location</label>
+        <div className='weather__input-button-container'>
         <Autocomplete className="weather__input-container">
           <input
             ref={weatherSearchRef}
@@ -59,6 +64,8 @@ const Weather = ({
             type="text"
           />
         </Autocomplete>
+        <button onClick={clearSearch} className='weather__clear-Location'>X</button>
+        </div>
         <p className="weather__input-header">
           Find Weather for the above location
         </p>

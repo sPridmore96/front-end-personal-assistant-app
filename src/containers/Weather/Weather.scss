@@ -28,6 +28,18 @@
         justify-content: center;
     }
 
+    &__input-button-container{
+        display: flex;
+        align-items: center
+    }
+    &__clear-Location{
+        @include roundButton($color-light-blue);
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-left: -2rem;
+        font-weight: 800;
+    }
+
     &__input-header{
         text-align: center;
         margin-top: 1rem;
