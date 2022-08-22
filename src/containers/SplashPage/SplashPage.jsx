@@ -5,7 +5,6 @@ import { SiHomeassistant } from "react-icons/si";
 import {
   Autocomplete,
   useJsApiLoader,
-  GoogleMap,
 } from "@react-google-maps/api";
 
 const SplashPage = ({ setUserName, setUserWorkPlace }) => {
