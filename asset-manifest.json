@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/front-end-personal-assistant-app/static/css/main.5390094d.css",
+    "main.js": "/front-end-personal-assistant-app/static/js/main.e36ed616.js",
+    "static/js/787.d9312eb8.chunk.js": "/front-end-personal-assistant-app/static/js/787.d9312eb8.chunk.js",
+    "index.html": "/front-end-personal-assistant-app/index.html",
+    "main.5390094d.css.map": "/front-end-personal-assistant-app/static/css/main.5390094d.css.map",
+    "main.e36ed616.js.map": "/front-end-personal-assistant-app/static/js/main.e36ed616.js.map",
+    "787.d9312eb8.chunk.js.map": "/front-end-personal-assistant-app/static/js/787.d9312eb8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5390094d.css",
+    "static/js/main.e36ed616.js"
+  ]
+}
