@@ -92,7 +92,7 @@ const Routing = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<SplashPage setUserName={setUserName} setUserWorkPlace={setUserWorkPlace} />} />
+        <Route path="/front-end-personal-assistant-app" element={<SplashPage setUserName={setUserName} setUserWorkPlace={setUserWorkPlace} />} />
         {currentWeatherInfo && (
           <Route
             path="/home"
