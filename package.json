@@ -2,7 +2,7 @@
   "name": "weather-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://spridmore96.github.io/front-end-personal-assistant-app",
+  "homepage": "https://spridmore96.github.io/front-end-personal-assistant-app/",
   "dependencies": {
     "@react-google-maps/api": "^2.12.1",
     "@testing-library/jest-dom": "^5.16.5",
